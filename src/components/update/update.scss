@@ -1,0 +1,79 @@
+@import "../../style.scss";
+
+.update {
+  @include themify($themes) {
+    position: absolute;
+    top: 500px;
+    bottom: 0;
+    left: 550px;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    background-color: themed("update");
+    padding: 50px;
+    z-index: 999;
+    border-radius: 10px;
+    animation: appearance 2s;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      #userInfo {
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      #file {
+        width: 150px;
+        padding: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: 3px dashed #bbb;
+        text-align: center;
+        background-color: #ddd;
+        cursor: pointer;
+      }
+
+      button {
+        width: 200px;
+        padding: 5px;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(4, 160, 4);
+        font-size: medium;
+        font-weight: bold;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+    }
+
+    #exitButton {
+      width: 50px;
+      padding: 5px;
+      border-radius: 20px;
+      border: none;
+      background-color: rgb(160, 22, 4);
+      font-size: medium;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes appearance {
+  from {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
